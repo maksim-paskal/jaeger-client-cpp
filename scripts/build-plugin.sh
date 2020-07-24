@@ -23,10 +23,11 @@ EOF
         -DJAEGERTRACING_PLUGIN=ON \
         -DBUILD_TESTING=ON \
         -DHUNTER_CONFIGURATION_TYPES=Release \
+        -DHUNTER_BUILD_SHARED_LIBS=OFF \
+        -DBUILD_SHARED_LIBS=OFF \
         ..
     make -j3
     mv libjaegertracing_plugin.so /libjaegertracing_plugin.so
-    ./DynamicallyLoadTracerTest /libjaegertracing_plugin.so
 }
 
 main
